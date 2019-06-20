@@ -1,0 +1,35 @@
+
+while (1)
+    stare_a=round(100*sin(0));
+    stare_b=round(200*sin(0+2*pi/3));
+    stare_c=round(200*sin(0+4*pi/3));
+    for (t=0:0.1:2*pi*10)
+        a=round(200*sin(t));
+        b=round(200*sin(t+2*pi/3));
+        c=round(200*sin(t+4*pi/3));
+        krokia=a-stare_a;
+        krokib=b-stare_b;
+        krokic=c-stare_c;
+        
+        fprintf(drukarka, 'a %d b %d c %d\n', [krokia krokib krokic])
+        while(drukarka.BytesAvailable ==0)
+            ;
+        end
+        fscanf(drukarka)
+        while (drukarka.BytesAvailable >0)
+            fscanf(drukarka)
+        end
+        
+        %     fprintf(drukarka, 'a %d b %d c %d\n', [-a -b -c])
+        %     while(drukarka.BytesAvailable ==0)
+        %     ;
+        %     end
+        %     fscanf(drukarka)
+        %     while (drukarka.BytesAvailable >0)
+        %         fscanf(drukarka)
+        %     end
+        stare_a=a;
+        stare_b=b;
+        stare_c=c;
+    end
+end
