@@ -1,0 +1,44 @@
+#include <LiquidCrystal.h>
+
+
+#define a -7.13574043254421e-07
+#define b 0.00122948098196130
+#define c -0.768098087793782
+#define d 266.069778753813
+
+double y,x;
+
+LiquidCrystal lcd(16,17,23,25,27,29);
+
+int i=0;
+
+void setup() {
+  // put your setup code here, to run once:
+ 
+lcd.begin(20,4);
+pinMode(10, OUTPUT);
+
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+int temp = analogRead(13);
+x=(double)temp;
+y=a*x*x*x+b*x*x+c*x+d; 
+lcd.setCursor(0,0);
+lcd.print(temp);
+lcd.setCursor(0,1);
+lcd.print(y);
+
+if(i<10)
+{
+  i++;
+  digitalWrite(10,1);
+}
+else
+  digitalWrite(10,0);
+delay(100);
+
+}
