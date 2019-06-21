@@ -1,3 +1,4 @@
+/* Szostek Adam, Michał Radecki, Piotr Laszuk, Maciej Kraśnicki */
 
 while (1)
     stare_a=round(100*sin(0));
