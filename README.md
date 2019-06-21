@@ -1,4 +1,5 @@
 # Program-Nieliniowe-Uk-ady-Sterowania
+/* Szostek Adam, Michał Radecki, Piotr Laszuk, Maciej Kraśnicki */
 Program z nieliniowych układów sterowania
 #define X_STEP_PIN         54
 #define X_DIR_PIN          55
